@@ -1,0 +1,31 @@
+
+@mixin flex($n) {
+    display: flex;
+    justify-content: $n;
+    @content
+};
+
+@mixin cntFlex(){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @content
+};
+
+
+$moblie :767px;
+$ipad :1060px;
+$pc :1280px;
+
+@mixin res($n){
+    @if($n != $pc){
+        @media screen and (max-width:$n) {
+            @content;
+        }
+    }@else{
+        @media screen and (min-width:$n) {
+            @content;
+        }
+    }
+    
+}

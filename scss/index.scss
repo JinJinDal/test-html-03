@@ -1,0 +1,332 @@
+@import "./mixin";
+@import url(../css/reset.css);
+
+.suv-content-text-box{
+    @include cntFlex();
+    h3{
+        font-size: 40px;
+        font-weight: bold;
+        margin: 20px 0;
+    }
+    p{
+        color: #6C757D;
+    }
+    @include res($moblie){
+        h3{
+            font-size: 25px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        p{
+            color: #6C757D;
+            font-size: 14px;
+        }
+};
+}
+body{
+    position: relative;
+}
+header{
+    position: absolute;
+    width: 80%; height: 5vw;
+    margin: 0 auto;
+    color: white;
+    left: 10%;
+    top: 1.5%;
+    // @include cntFlex();
+    nav{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        p{
+            color: #FFC800;
+        }
+        a{
+            margin: 0 10px;
+            font-size: 15px;
+            color: white;
+        }
+        .pc-gnb{
+            @include res($moblie){
+                display: none
+            };
+        }
+        .mb-gnb{
+            display: none;
+            @include res($moblie){
+                width: 50px; height: 40px;
+                display: flex;
+                position: relative;
+            }
+            span{
+                @include res($moblie){
+                    width: 60%; height: 2px;
+                    background-color: #FFC800;
+                    position: absolute;
+                    left: 20%; top: 50%;
+                    transition: .1s;
+                    &:nth-child(1){transform: translateY(-10px);}
+                    &:nth-child(2){}
+                    &:nth-child(3){transform: translateY(10px);}
+                };
+            }
+            &:hover span:nth-child(1){transform: translateY(0px) rotate(45deg);}
+            &:hover span:nth-child(2){transform: scaleX(0);}
+            &:hover span:nth-child(3){transform: translateY(0px) rotate(-45deg);}
+            
+        }
+    }
+        
+}
+
+main{
+    width: 80%;
+    margin: 0 auto;
+}
+.sct1{
+    height: 34rem;
+    > div{
+        background: url(../img/Header.png) 0 0 / cover no-repeat;
+        width: 100%; height: 100%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        h2{
+            font-size: 36px;
+            @include res($moblie){
+                font-size: 24px;
+            };
+        }
+        p{
+            font-size: 72px;
+            @include res($moblie){
+                font-size: 50px
+            };
+        }
+        input{
+            background-color: #FFC800;
+            color: white;
+            width: 11rem; height: 3.4rem;
+            border-radius: 6px;
+            outline: none;
+            margin-top: 3rem;
+            font-size: 18px;
+            font-weight: bold;
+            @include res($moblie){
+                font-size: 12px;
+                width: 8rem; height: 2.4rem;
+                margin-top: 1rem;
+            };
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+    }    
+}
+
+.sct2{
+    @include cntFlex();
+    margin: 100px 0;
+    >div{
+        @include cntFlex();
+        margin: 50px 0;
+        h3{
+            font-size: 40px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+    }
+    > figure{
+        display: flex;
+        @include res($ipad){
+            flex-direction: column
+        };
+        figcaption{
+            margin: 0 15px;
+            @include res($ipad){
+                margin-bottom: 100px;
+            };
+            h4{
+                text-align: center;
+            }
+            p{
+                &:nth-child(1){
+                    background-color: #FFC800;
+                    width: 128px; height: 128px;
+                    border-radius: 100%;
+                    @include cntFlex();
+                    justify-content: center;
+                }
+                text-align: center;
+                img{
+                    width: 65%; height: 60px;
+                }
+            }
+            @include cntFlex();
+        }
+    }
+}
+
+.sct3{
+    @include cntFlex();
+    background-color: #F8F9FA;
+    margin-top: 100px;
+    > div{
+        @include cntFlex();
+        margin: 40px 0;
+        h3{
+            font-size: 40px;
+            font-weight: bold;
+        }
+    }
+    .content-bundle{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        @include res($moblie){
+            justify-content: center;
+        };
+        @include res($ipad){
+            justify-content: center;
+        }
+        align-items: center;
+        figure{
+            text-align: center;
+            .text-box{
+                margin: 30px 0;
+            }
+        }
+        p{
+            width: 100%;
+            overflow: hidden;
+            &:hover img{
+                transform: scale(130%);
+            }
+            img{
+                width: 100%;
+                transition: all ease 1.5s;
+            }
+        }
+        b{
+            font-size: 24px;
+            font-weight: bold;
+        }
+    }
+}
+
+.sct4{
+    background: url(../img/Section.png) 0 0 / cover no-repeat;
+    height: 45vw;
+    @include cntFlex(){
+        justify-content: space-evenly;
+    };
+    color: white;
+    .input-bundle{
+        display: flex;
+        flex-direction: column;
+        @include res($moblie){
+            flex-direction: row;
+        }
+        align-items: center;
+        .input-box{
+            display: flex;
+            justify-content: space-between;
+            height: 12vw;
+            width: 80%;
+            > textarea{
+                width: 50vw;
+                border-radius: 6px;
+                @include res($moblie){
+                    display: none;
+            };
+            }
+            @include res($moblie){
+                    display: flex;
+                    flex-direction: column;
+                    width: 55%;
+            };
+        }
+        nav{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-between;
+            margin-right: 10px;
+            input{
+                width: 35vw;
+                height: 3.6vw;
+                border-radius: 6px;
+                font-weight: bold;
+                color: #CED4DA;
+                @include res($moblie){
+                    width: 30vw;
+                }
+            }
+        }
+        .send-btn{
+            background-color: #FFC800;
+            width: 11rem;
+            height: 3rem;
+            outline: none;
+            margin-top: 2vw;
+            border-radius: 6px;
+            color: white;
+            opacity: 65%;
+            @include res($moblie){
+                margin: 0;
+                height: 100%
+            };
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+    
+}
+
+footer{
+    width: 80%;
+    height: 6vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    @include res($moblie){
+        font-size: 10px;
+    }
+    div{
+        display: flex;
+    }
+    .ft-icon{
+        p{
+            width: 40px; height: 40px;
+            background-color: #212529;
+            border-radius: 100%;
+            margin: 0 10px;
+            @include cntFlex();
+            justify-content: center;
+            img{
+                height: 16px;
+            }
+            @include res($moblie){
+                width: 25px; height: 25px;
+                img{
+                    height: 12px
+                }
+            };
+        }
+    }
+    .ft-wht{
+        p{
+            margin: 0 10px;
+            @include res($moblie){
+                margin: 0 5px;
+            }
+        }
+    }
+}
