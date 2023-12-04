@@ -174,6 +174,9 @@ main{
     @include cntFlex();
     background-color: #F8F9FA;
     margin-top: 100px;
+    @include res($moblie){
+        background-color: white;
+    }
     > div{
         @include cntFlex();
         margin: 40px 0;
@@ -278,7 +281,8 @@ main{
             opacity: 65%;
             @include res($moblie){
                 margin: 0;
-                height: 100%
+                height: 100%;
+                width: 30vw;
             };
             &:hover{
                 opacity: 1;
@@ -296,6 +300,7 @@ footer{
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
+    padding: 20px 0;
     @include res($moblie){
         font-size: 10px;
     }

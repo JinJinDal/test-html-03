@@ -215,6 +215,11 @@ main {
   background-color: #F8F9FA;
   margin-top: 100px;
 }
+@media screen and (max-width: 767px) {
+  .sct3 {
+    background-color: white;
+  }
+}
 .sct3 > div {
   display: flex;
   flex-direction: column;
@@ -338,6 +343,7 @@ main {
   .sct4 .input-bundle .send-btn {
     margin: 0;
     height: 100%;
+    width: 30vw;
   }
 }
 .sct4 .input-bundle .send-btn:hover {
@@ -352,6 +358,7 @@ footer {
   justify-content: space-between;
   align-items: center;
   font-size: 14px;
+  padding: 20px 0;
 }
 @media screen and (max-width: 767px) {
   footer {
